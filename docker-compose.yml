@@ -1,0 +1,29 @@
+services:
+  packaging-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: packaging-api
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    networks:
+      - packaging-network
+    depends_on:
+      - telemetry
+
+  telemetry:
+    image: mcr.microsoft.com/dotnet/aspire-dashboard:latest
+    container_name: packaging-telemetry
+    ports:
+      - '18888:18888'
+      - '18889:18889'
+    networks:
+      - packaging-network
+
+networks:
+  packaging-network:
+    driver: bridge
