@@ -36,7 +36,7 @@ Esta API foi desenvolvida para automatizar o processo de embalagem de pedidos. A
 
 1. Clone o repositório:
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/danielsimass/packaging-service
 cd packaging-api
 ```
 
