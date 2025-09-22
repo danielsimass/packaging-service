@@ -293,58 +293,6 @@ OTEL_EXPORTER_OTLP_METRICS_ENDPOINT=http://localhost:18889/v1/metrics
 OTEL_RESOURCE_ATTRIBUTES=service.name=packaging-api,service.version=1.0.0
 ```
 
-## 📝 Exemplos de Uso
-
-### Exemplo de Entrada
-
-```json
-{
-  "pedidos": [
-    {
-      "pedido_id": 1,
-      "produtos": [
-        {
-          "produto_id": "PS5",
-          "dimensoes": {
-            "altura": 40,
-            "largura": 10,
-            "comprimento": 25
-          }
-        },
-        {
-          "produto_id": "Volante",
-          "dimensoes": {
-            "altura": 40,
-            "largura": 30,
-            "comprimento": 30
-          }
-        }
-      ]
-    }
-  ]
-}
-```
-
-### Exemplo de Saída
-
-```json
-{
-  "pedidos": [
-		{
-			"pedido_id": 1,
-			"caixas": [
-				{
-					"caixa_id": "Caixa 1",
-					"produtos": [
-						"Volante",
-						"PS5"
-					]
-				}
-			]
-		}
-}
-```
-
 ## 🧪 Testes
 
 Execute os testes com:
